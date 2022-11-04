@@ -32,7 +32,8 @@ jobs:
       id-token: 'write'
     runs-on: ubuntu-latest
     needs: [DB_DELETE_US_EAST]
-    if: (contains(inputs.switch_to_region, 'us-east') && (contains(inputs.job_selection, 'replica')) || contains(inputs.job_selection, 'all')))
+    if: |
+      contains(inputs.switch_to_region, 'us-east') && (contains(inputs.job_selection, 'replica')) || contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
@@ -78,7 +79,8 @@ jobs:
       id-token: 'write'
     runs-on: ubuntu-latest
     needs: [DB_DELETE_US_WEST]
-    if: (contains(inputs.switch_to_region, 'us-west') && (contains(inputs.job_selection, 'replica')) || (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'all')))
+    if: |
+      contains(inputs.switch_to_region, 'us-west') && (contains(inputs.job_selection, 'replica')) || (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
