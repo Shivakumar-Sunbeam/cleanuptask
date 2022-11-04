@@ -103,8 +103,6 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v0'
       - name: 'Use gcloud CLI'
         run: |
-          gcloud info
-          gcloud version
           gcloud sql instances patch geodb --no-deletion-protection # disable deletion protection
           gcloud sql instances delete geodb --quiet
           
