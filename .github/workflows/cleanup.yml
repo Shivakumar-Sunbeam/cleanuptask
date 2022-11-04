@@ -33,8 +33,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [DB_DELETE_US_EAST]
     if: |
-      (contains(inputs.switch_to_region, 'us-east') && concontains(inputs.job_selection, 'replica-create')) ||
-      (contains(inputs.switch_to_region, 'us-east') && concontains(inputs.job_selection, 'all'))
+      (contains(inputs.switch_to_region, 'us-east') && contains(inputs.job_selection, 'replica-create')) ||
+      (contains(inputs.switch_to_region, 'us-east') && contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
@@ -56,8 +56,8 @@ jobs:
       id-token: 'write'
     runs-on: ubuntu-latest
     if: |
-      (contains(inputs.switch_to_region, 'us-east') && concontains(inputs.job_selection, 'delete-db')) ||
-      (contains(inputs.switch_to_region, 'us-east') && concontains(inputs.job_selection, 'all'))
+      (contains(inputs.switch_to_region, 'us-east') && contains(inputs.job_selection, 'delete-db')) ||
+      (contains(inputs.switch_to_region, 'us-east') && contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
@@ -81,8 +81,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [DB_DELETE_US_WEST]
     if: |
-      (contains(inputs.switch_to_region, 'us-west') && concontains(inputs.job_selection, 'replica-create')) ||
-      (contains(inputs.switch_to_region, 'us-west') && concontains(inputs.job_selection, 'all'))
+      (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'replica-create')) ||
+      (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
@@ -104,8 +104,8 @@ jobs:
       id-token: 'write'
     runs-on: ubuntu-latest
     if: |
-      (contains(inputs.switch_to_region, 'us-west') && concontains(inputs.job_selection, 'delete-db')) ||
-      (contains(inputs.switch_to_region, 'us-west') && concontains(inputs.job_selection, 'all'))
+      (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'delete-db')) ||
+      (contains(inputs.switch_to_region, 'us-west') && contains(inputs.job_selection, 'all'))
     env:
       PROJECT_ID: 'grand-thought-365806'
     steps:
